@@ -1,0 +1,12 @@
+.custom-card {
+    background-color: powderblue !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.powderblue {
+    color: black !important;
+    background-color: powderblue !important;
+    border-color: powderblue !important
+}

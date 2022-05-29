@@ -3,18 +3,16 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { useLocation } from 'react-router-dom';
-import { MapContainer } from "react-leaflet";
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
 });
 
-export default function MapBike() {
-    const location1 = useLocation();
-    useEffect((props) => {
-        var local = location1;
+export default function MapBike(props) {
+    useEffect(() => {
+        var local = props.data;
+        console.log(local)
         var xCoor = parseFloat(local.state.item.Koordinat.split(",")[0])
         var yCoor = parseFloat(local.state.item.Koordinat.split(",")[1])
         console.log(xCoor,yCoor)
@@ -39,6 +37,6 @@ export default function MapBike() {
         L.Marker.prototype.options.icon = DefaultIcon;
         var marker = L.marker([xCoor, yCoor]).addTo(map);
         marker.bindPopup(local.state.item.IstasyonAdi).openPopup();
-    }, []);
+    }, [props]);
     return <div id="map" style={{ height: "100vh" }}></div>;
 }
