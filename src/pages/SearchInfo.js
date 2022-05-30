@@ -44,7 +44,7 @@ export default function SearchInfo() {
         return <Button type="button" className="powderblue"
           onClick={() => {
             if (row.Koordinat === "")
-              alertify.error("Hatalı Koordinat!")
+              alertify.error("Koordinat Hatalı!")
             else {
               setSelectedRow({ state: { item: row } })
               setShowModal(true)
@@ -98,7 +98,7 @@ export default function SearchInfo() {
         <div className='p-2'>
          <div className='p2'>
             
-         <input placeholder='Doluluk oranı girin' type="number" onChange={(event) => onChange(event)}></input>
+         <input placeholder='Doluluk oranı girin'  type="number" onChange={(event) => onChange(event)}></input>
          </div><div>
           
           {
@@ -117,7 +117,7 @@ export default function SearchInfo() {
             <div class="d-flex flex-row">
               <div className='p-2'>
 
-                <div className='d-flex justify-content-end'><Button type="button" className="btn btn-danger" onClick={() => setShowModal(false)}><FontAwesomeIcon icon={faWindowClose} color="white" /></Button></div>
+                <div className='d-flex justify-content-end'><Button type="button"  className="btn btn-danger" onClick={() => setShowModal(false)}><FontAwesomeIcon icon={faWindowClose} color="white" /></Button></div>
               </div>
               <div className='p-2'>
                 <div className='d-flex flex-column'>
