@@ -12,10 +12,8 @@ let DefaultIcon = L.icon({
 export default function MapBike(props) {
     useEffect(() => {
         var local = props.data;
-        console.log(local)
         var xCoor = parseFloat(local.state.item.Koordinat.split(",")[0])
         var yCoor = parseFloat(local.state.item.Koordinat.split(",")[1])
-        console.log(xCoor,yCoor)
         var container = L.DomUtil.get("map");
         if (container != null) {
             container._leaflet_id = null;
