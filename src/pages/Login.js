@@ -17,14 +17,15 @@ export default function Login() {
     else return true
   }
 
-  function handleSubmit(event) {
+
+  function handleSubmit(event,props) {
     if (name === "1" && password === "1")
       navigate('/searchbike')
     else alertify.error("Geçersiz Kullanıcı adı veya Şifre")
   }
 
   return (
-    <div className="Login">
+    <div className="Login" >
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Kullanıcı Adı</Form.Label>

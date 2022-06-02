@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import { Button } from "bootstrap";
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -12,6 +13,7 @@ let DefaultIcon = L.icon({
 export default function MapBike(props) {
     useEffect(() => {
         var local = props.data;
+        var popupContent ="İstasyon Kodu:"+ " "+local.state.item.IstasyonID+ " </br>" + "İstasyon Adı:"+" "+local.state.item.IstasyonAdi +"</br>"+"Bisiklet Sayısı:"+" "   +local.state.item.BisikletSayisi 
         var xCoor = parseFloat(local.state.item.Koordinat.split(",")[0])
         var yCoor = parseFloat(local.state.item.Koordinat.split(",")[1])
         var container = L.DomUtil.get("map");
@@ -34,7 +36,7 @@ export default function MapBike(props) {
         ).addTo(map);
         L.Marker.prototype.options.icon = DefaultIcon;
         var marker = L.marker([xCoor, yCoor]).addTo(map);
-        marker.bindPopup(local.state.item.IstasyonAdi).openPopup();
+        marker.bindPopup(popupContent ).openPopup();
     }, [props]);
     return <div id="map" style={{ height: "100vh" }}></div>;
 }

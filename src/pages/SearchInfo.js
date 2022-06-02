@@ -119,7 +119,7 @@ export default function SearchInfo() {
 
                 <div className='d-flex justify-content-end'><Button type="button"  className="btn btn-danger" onClick={() => setShowModal(false)}><FontAwesomeIcon icon={faWindowClose} color="white" /></Button></div>
               </div>
-              <div className='p-2'>
+              {/* <div className='p-2'>
                 <div className='d-flex flex-column'>
                   <div className='p-2'> {selectedRow?.state?.item === undefined ? "" : <>İstasyon Kodu: {selectedRow.state.item.IstasyonID}</>}</div>
                   <div className='p-2'> {selectedRow?.state?.item === undefined ? "" : <>Bisiklet Sayısı: {selectedRow.state.item.BisikletSayisi}</>}</div>
@@ -127,7 +127,7 @@ export default function SearchInfo() {
                   <div className='p-2'> {selectedRow?.state?.item === undefined ? "" : <>Istasyon Adı: {selectedRow.state.item.IstasyonAdi}</>}</div>
                   <br />
                 </div>
-              </div>
+              </div> */}
 
             </div>
 

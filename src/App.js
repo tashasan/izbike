@@ -3,6 +3,8 @@ import Login from './pages/Login';
 import SearchInfo from './pages/SearchInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
+  
+ 
   return (
     <div className="App">
           <Router>
